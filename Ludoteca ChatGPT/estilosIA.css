@@ -1,0 +1,285 @@
+
+:root {
+  --beige-1: #f8f1e3;
+  --beige-2: #efe3cf;
+  --beige-3: #dfccb0;
+  --brown: #5c4938;
+  --brown-dark: #3f3227;
+  --accent: #9b7653;
+  --white: #fffdf8;
+  --shadow: 0 8px 22px rgba(74, 55, 39, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--brown-dark);
+  background: var(--beige-1);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--brown-dark);
+  color: var(--white);
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 12px rgba(0,0,0,.12);
+}
+
+.navbar {
+  max-width: 1180px;
+  margin: auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: block;
+  transition: background .2s ease;
+}
+
+nav a:hover, nav a:focus {
+  background: #75604d;
+  outline: none;
+}
+
+main {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 55px 0 70px;
+}
+
+.hero {
+  background: var(--beige-2);
+  border: 1px solid var(--beige-3);
+  border-radius: 18px;
+  padding: 55px 35px;
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  margin: 0 0 12px;
+  color: var(--brown-dark);
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 0 auto 24px;
+  font-size: 1.08rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  text-decoration: none;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover, .btn:focus {
+  background: var(--brown);
+}
+
+.section-title {
+  text-align: center;
+  margin: 0 0 28px;
+  color: var(--brown-dark);
+}
+
+.category-grid, .game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.category-card, .game-card, .info-card, form {
+  background: var(--white);
+  border: 1px solid var(--beige-3);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+}
+
+.category-card {
+  padding: 30px;
+  text-align: center;
+  transition: transform .2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+}
+
+.category-card h3 { margin-top: 0; }
+
+.game-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.game-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  background: var(--beige-2);
+}
+
+.game-content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.game-content h3 {
+  margin: 0 0 8px;
+  color: var(--brown-dark);
+  font-size: 1.45rem;
+}
+
+.rating {
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 10px;
+}
+
+.game-content p {
+  margin-top: 0;
+}
+
+.game-content .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.page-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.page-heading h1 {
+  margin-bottom: 5px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.info-card {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.info-card h2 { color: var(--brown); }
+
+form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.form-group { margin-bottom: 20px; }
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cdbb9e;
+  border-radius: 8px;
+  background: #fffefa;
+  color: var(--brown-dark);
+  font: inherit;
+}
+
+textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+footer {
+  background: var(--brown-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 28px 5%;
+}
+
+footer p { margin: 4px 0; }
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .category-grid, .game-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding-top: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  header { padding: 0 3%; }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a { padding: 7px; }
+
+  .hero { padding: 35px 20px; }
+
+  .info-card, form { padding: 22px; }
+}
